@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  med_db:
+    image: postgres:14.2
+    environment:
+      POSTGRES_DB: med_dev
+      POSTGRES_PASSWORD: 123456
+      PGDATA: /var/lib/postgresql/data/pgdata
+      PGTZ: Asia/Tomsk
+      TZ: Asia/Tomsk
+    volumes:
+      - ./initdb-scripts:/docker-entrypoint-initdb.d
+      - ./container-data:/var/lib/postgresql/data
+    ports: 
+      - 5439:5432
+    restart: unless-stopped
