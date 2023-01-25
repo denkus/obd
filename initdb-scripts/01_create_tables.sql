@@ -10,7 +10,6 @@ create table med.doctors (
     first_name text not null,
     middle_name text,
     job_title_id integer,
-    date_employed date,
     CONSTRAINT pk_doctors PRIMARY KEY (id),
     CONSTRAINT fk_doctors_jobtitles_jobtitle_id FOREIGN KEY (job_title_id) REFERENCES med.job_titles (id)
 );
