@@ -53,4 +53,4 @@ values
 
 insert into med.patient_visit_diag (visit_id, diag_id)
 values
-    (1, 4), (2, 4), (3, 3), (4, 1), (5, 1);
+    (1, 4), (2, 4), (3, 3), (4, 1), (5, 1), (5, 2);
