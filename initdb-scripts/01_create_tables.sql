@@ -11,8 +11,6 @@ create table med.doctors (
     middle_name text,
     job_title_id integer,
     date_employed date,
-    uni_name text,
-    uni_specialty text,
     CONSTRAINT pk_doctors PRIMARY KEY (id),
     CONSTRAINT fk_doctors_jobtitles_jobtitle_id FOREIGN KEY (job_title_id) REFERENCES med.job_titles (id)
 );
@@ -23,7 +21,6 @@ create table med.clinics (
     full_name text not null,
     short_name varchar(50),
     address text,
-    email varchar(320),
     CONSTRAINT pk_clinics PRIMARY KEY (id),
     CONSTRAINT fk_clinics_doctors_chief_id FOREIGN KEY (chief_doctor_id) REFERENCES med.doctors (id)
 );
@@ -41,7 +38,6 @@ create table med.patients (
     last_name text not null,
     first_name text not null,
     middle_name text,
-    passport_num varchar(10) not null,
     dob date,
     gender char(1) not null,
     phone text,
